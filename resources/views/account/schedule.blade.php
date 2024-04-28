@@ -26,6 +26,9 @@
                     Browse new coures at <a href="{{ route('courses.index') }}">Course lists</a>
                 </div>
             @else
+                <h2>
+                    Total units: {{ $userCourses->sum('units') }}
+                </h2>
                 <table class="table table-striped">
                     <thead>
                         <tr>
