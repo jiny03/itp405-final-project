@@ -1,1 +1,1 @@
-zoom recording: https://usc.zoom.us/rec/share/uZ9h3Fy4SkQGeDYeaI9WFI0Grv82vlBsjt1xtiyVBry2QSHkY_1spDKpfiePbrNO.GFLsDvUqAJVco0PO
+zoom recording: https://usc.zoom.us/rec/share/TNf6laU4m8P_wEnKWiy8CcnRQP9ZPSnKRrVKO2kikayDdVbxIztY_MylWQ3RI7A.E5vCk96V_kv2SVXW
