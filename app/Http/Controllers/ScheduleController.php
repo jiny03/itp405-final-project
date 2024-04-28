@@ -59,7 +59,6 @@ class ScheduleController extends Controller
             'course_number' => $course->course_number,
             'user_id' => $user->id,
             'user_semester_id' => $defaultSemester->id,
-            'is_favorited' => false
             ]);
 
 
@@ -133,7 +132,17 @@ class ScheduleController extends Controller
     }
 
     public function viewSemester(Semester $semester) {
-        $nonDefaultSemester = Semester::find($semester->id);
+        $courses = $semester->userCourses()->get();
+        if(!$courses) {
+            return view('account/view_semester', [
+                'semester' => $semester,
+                'courses' => null
+            ]);
+        }
+        return view('account/view_semester', [
+            'semester' => $semester,
+            'courses' => $courses
+        ]);
     }
 
     public function setDefaultSemester(Semester $semester) {

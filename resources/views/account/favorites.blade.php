@@ -2,4 +2,5 @@
 @section('title', 'Favorites')
 
 @section('main')
+
 @endsection

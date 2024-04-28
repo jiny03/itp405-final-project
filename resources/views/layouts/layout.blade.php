@@ -9,12 +9,7 @@
 </head>
 <body>
     <div class="container mt-3">
-        @if (session('error'))
-            <div class="alert alert-danger mt-3" role="alert">
-                {{ session('error') }}
-            </div>
-        @endif
-        
+
         <ul class="nav d-flex justify-content-end">
             @if (Auth::check())
                 <li class="nav-item">
@@ -22,6 +17,9 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('schedule.semesters') }}" class="nav-link">Semesters</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('account.favorites') }}" class="nav-link">Favorites list</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('courses.index') }}" class="nav-link">Course list</a>
@@ -47,7 +45,14 @@
                 </li>
             @endif
         </ul>
+
+        @if (session('error'))
+            <div class="alert alert-danger mt-3" role="alert">
+                {{ session('error') }}
+            </div>
+        @endif
         @yield('main')
     </div>
+
 </body>
 </html>

@@ -4,11 +4,7 @@
 
 @section('main')
 
-@if (session('error'))
-<div class="alert alert-danger mt-3" role="alert">
-    {{ session('error') }}
-</div>
-@endif
+
     @if (session('success'))
         <div class="alert alert-success" role="alert">
             {{ session('success') }}
@@ -29,6 +25,7 @@
                     <th>Instructor name</th>
                     <th>Units</th>
                     <th>Add to current semester</th>
+                    <th>View Comments</th>
                 </tr>
                 </thead>
             <tbody>
@@ -42,6 +39,11 @@
                             <form action="{{ route('schedule.addCourse', $course->id) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{{ route('courses.viewComments', $course->id) }}" method="GET">
+                                <button type="submit" class="btn btn-info">Comments</button>
                             </form>
                         </td>
                     </tr>

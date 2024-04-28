@@ -17,7 +17,7 @@
             <a href="{{ route('schedule.semesters') }}">Semesters Page</a>
         </div>
     @else
-        <h1>Schedule for {{ $defaultSemester->title }} semester</h1>
+        <h1>Schedule of {{ $defaultSemester->title }} semester</h1>
 
         <div>
             @if ($courses->count() === 0)
@@ -34,6 +34,7 @@
                             <th>Instructor name</th>
                             <th>Units</th>
                             <th>Delete</th>
+                            <th>View Comments</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -47,6 +48,11 @@
                                 <form action="{{ route('schedule.deleteCourse', $course) }}" method="POST">
                                     @csrf
                                     <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="{{ route('courses.viewComments', $course->id) }}" method="GET">
+                                    <button type="submit" class="btn btn-info">Comments</button>
                                 </form>
                             </td>
                         </tr>
